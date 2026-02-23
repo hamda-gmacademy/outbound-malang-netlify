@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vendor-outbound-malang.netlify.app/sitemap.xml

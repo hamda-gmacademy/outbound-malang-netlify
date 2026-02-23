@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Petualangan Outbound Malang</title>
+    <!-- Typography & Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #0077b8;
+            --primary-dark: #005a8d;
+            --secondary: #2D6A4F;
+            --bg-light: #f5f7f8;
+            --text-main: #343A40;
+            --text-light: #6C757D;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            width: 100%;
+            border-bottom: 1px solid #e5e7eb;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .header-inner {
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo .material-symbols-outlined {
+            font-size: 36px;
+        }
+
+        .logo h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            height: 40px;
+            padding: 0 24px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .menu-icon {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .menu-icon .material-symbols-outlined {
+            font-size: 24px;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 8px 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 24px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+
+        .mobile-menu a:hover {
+            background: var(--bg-light);
+            color: var(--primary);
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        /* ===== ARTICLE DETAIL ===== */
+        .article-page {
+            flex: 1;
+            padding: 64px 40px;
+            background: white;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: gap 0.2s;
+        }
+
+        .article-back:hover {
+            gap: 12px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .article-tag {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: white;
+            background-color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .article-date {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--text-main);
+            margin-bottom: 32px;
+        }
+
+        .article-hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-content {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 12pt;
+            line-height: 1;
+            /* Line Spacing Single */
+            color: #4b5563;
+        }
+
+        .article-content h1,
+        .article-content h2,
+        .article-content h3,
+        .article-content h4 {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        .article-content p {
+            margin-top: 0;
+            margin-bottom: 8pt;
+            /* Spacing After 8pt */
+        }
+
+        .article-content ul {
+            margin-bottom: 8pt;
+            padding-left: 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+        }
+
+        .image-caption {
+            font-size: 0.875rem;
+            text-align: center;
+            color: var(--text-light);
+            margin-top: -24px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .toc-container {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+
+        .toc-container summary {
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.125rem;
+            color: var(--primary);
+        }
+
+        .toc-container ul {
+            margin-top: 12px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc-container ul li {
+            margin-bottom: 8px;
+        }
+
+        .toc-container a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .toc-container a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .baca-juga {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .baca-juga h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            font-size: 1.125rem;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--secondary);
+            background: #f1f8f5;
+            padding: 16px 20px;
+            margin: 24px 0;
+            font-style: italic;
+            color: #2d6a4f;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .promo-gif {
+            display: block;
+            max-width: 100%;
+            margin: 32px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .supporting-figure {
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .supporting-figure img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        .supporting-figure figcaption {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 16px;
+        }
+
+        .faq-item summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-main);
+            font-size: 1.125rem;
+        }
+
+        .faq-item p {
+            margin-top: 12px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .author-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .author-profile img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 4px;
+            font-size: 1.125rem;
+            color: #000;
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .share-btn:hover {
+            opacity: 0.9;
+        }
+
+        .share-wa {
+            background-color: #25D366;
+        }
+
+        .share-fb {
+            background-color: #1877F2;
+        }
+
+        .share-tw {
+            background-color: #000000;
+        }
+
+        .related-articles-section {
+            margin-top: 64px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 48px;
+            margin-bottom: 48px;
+        }
+
+        .related-articles-section>h3 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .related-card h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            color: #000;
+        }
+
+        .related-card p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .related-btn {
+            display: inline-block;
+            padding: 8px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .related-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 64px 40px 32px;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+        }
+
+        .footer-logo .material-symbols-outlined {
+            font-size: 1.75rem;
+        }
+
+        .footer-logo h2 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col h4 {
+            font-weight: 700;
+        }
+
+        .footer-col a {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ===== FAB ===== */
+        .fab-wrap {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 50;
+        }
+
+        .fab-wa {
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .fab-wa:hover {
+            transform: scale(1.05);
+        }
+
+        .fab-wa svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 16px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .article-page {
+                padding: 32px 20px;
+            }
+
+            footer {
+                padding: 48px 20px 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <a class="logo" href="index.html">
+                <span class="material-symbols-outlined">landscape</span>
+                <h2>Malang Outbound</h2>
+            </a>
+            <nav>
+                <a href="index.html#home">Beranda</a>
+                <a href="index.html#profile">Profil</a>
+                <a href="index.html#packages">Paket</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Kontak</a>
+            </nav>
+            <div style="display:flex;align-items:center;gap:16px;">
+                <a href="https://wa.me/6281234567890?text=halo,%20saya%20tertarik%20memesan%20jasa%20outbound%20di%20Malang,%20boleh%20saya%20berkonsultasi%20terlebih%20dahulu?"
+                    target="_blank" class="btn-primary" style="display:none;" id="desktop-book">Pesan Sekarang</a>
+                <button class="menu-icon" id="menu-toggle" aria-label="Open menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html#home" onclick="closeMobileMenu()">Beranda</a>
+            <a href="index.html#profile" onclick="closeMobileMenu()">Profil</a>
+            <a href="index.html#packages" onclick="closeMobileMenu()">Paket</a>
+            <a href="index.html#blog" onclick="closeMobileMenu()">Blog</a>
+            <a href="index.html#contact" onclick="closeMobileMenu()">Kontak</a>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="article-container">
+            <a href="index.html#blog" class="article-back">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Kembali ke Beranda
+            </a>
+
+            <div class="article-meta">
+                <span class="article-tag">Membangun Tim</span>
+                <span class="article-date">28 Sep 2023 • 4 menit baca</span>
+            </div>
+
+            <h1 class="article-title">Mengapa Bonding di Luar Ruangan Lebih Baik untuk Moral</h1>
+
+            <img class="article-hero-img" alt="Hikers walking up a misty mountain trail in Malang"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBBxtM1kZJ-t3tMVHWJP4tlcewM6Bb6YwSIkCkJLecCbsLJzVTVgVVXWVxT9nW1joa8uX67Mr5gIKkiUKFu7lMv4JHhkmzng2bWB4wXnwExtWHYH7WC3QFCbS6jd6IWR_-cEAPxW-dI1cM-7ZuoSHLcFbft_ZjRpmVv1mp36ajRzTe9USy2rOrloChbG7LGpL-o29xf1ZaBQW-wM9p94me6hvUjtyfUlk4d67gF_84G9DfoU-CrqrjYLV7DNmQzPS36IjnsvIwACTG" />
+            <p class="image-caption">Deskripsi: Para pendaki sedang menyusuri keindahan alam bebas di Malang, menikmati
+                udara segar dan kebersamaan.</p>
+
+            <div class="article-content">
+                <div class="toc-container">
+                    <details open>
+                        <summary>Daftar Isi</summary>
+                        <ul id="toc-list"></ul>
+                    </details>
+                </div>
+                <p>Malang bukan hanya soal udara sejuk dan apel, melainkan surga tersembunyi bagi para pencinta alam dan
+                    kegiatan <em>outbound</em>. Jika Anda sudah bosan dengan wisata yang itu-itu saja, sudah saatnya
+                    Anda mengeksplorasi jejak pendakian tersembunyi yang menawarkan ketenangan batin, adrenalin, dan
+                    tentu saja panorama yang bisa menghilangkan rasa penat seketika.</p>
+
+                <p>Tim dari <strong>Malang Outbound</strong> telah merangkum lima jalur rahasia terbaik yang kami
+                    gunakan untuk kegiatan eksplorasi klien kami. Mari kita selami lebih dalam!</p>
+
+                <div class="baca-juga">
+                    <h4>Baca Juga:</h4>
+                    <ul>
+                        <li><a href="article1.html">5 Jalur Pendakian Tersembunyi Terbaik di Malang</a></li>
+                        <li><a href="article3.html">Utamakan Keselamatan: Panduan Kami untuk Petualangan yang Aman</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <blockquote>"Petualangan terbaik bukanlah tentang menaklukkan alam, tapi menaklukkan diri sendiri dan
+                    menyatu dengan tim." <br>- Tim Spesialis Outbound</blockquote>
+
+                <h2>1. Jalur Bukit Nirwana (Pujon)</h2>
+                <p>Berada di deretan punggung gunung kawasan Pujon, Bukit Nirwana tidak sekadar menawarkan spot foto
+                    yang instagenik, melainkan jalur <em>trekking</em> ringan yang berkelok melintasi lahan pertanian
+                    penduduk. Karena belum banyak turis reguler yang tahu, trek ini sangat bersih dan tenang.</p>
+
+                <h2>2. Rute Rahasia Air Terjun Coban Glotak</h2>
+                <p>Coban Glotak mungkin tak sepopuler Coban Rondo. Namun untuk <em>team building</em> yang mengunggulkan
+                    ketangguhan dan pemecahan masalah (<em>problem solving</em>), rute menyusuri sungai menuju Coban
+                    Glotak adalah yang terbaik. Terletak di lereng Gunung Kawi, jalur ini dikelilingi vegetasi lumut
+                    yang tebal bak hutan dongeng.</p>
+
+                <h2>3. Puncak Budug Asu (Lereng Arjuno)</h2>
+                <p>Jangan tertipu dengan namanya yang unik. Puncak Budug Asu adalah permata bagi penikmat
+                    <em>sunrise</em> dan petualangan semi-ekstrem. Anda akan menghadapi jalur tanjakan curam yang diapit
+                    hutan pinus. Sangat menantang namun aman dilakukan di bawah pengawasan pemandu profesional.
+                </p>
+
+                <img src="https://media.giphy.com/media/l41YkxvU8c7J7Bba0/giphy.gif" alt="Promo Outbound"
+                    class="promo-gif" />
+
+                <figure class="supporting-figure">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800"
+                        alt="Tim Outbound sedang bermain games">
+                    <figcaption>Gambar pendukung: Peserta outbound menikmati permainan membangun kekompakan.
+                    </figcaption>
+                </figure>
+
+                <h2>4. Hutan Pinus Jalur Lintas Paralayang</h2>
+                <p>Jalur ini biasanya digunakan para atlet, tapi ternyata ada rute pejalan kaki yang bisa disusuri
+                    selama sekitar dua jam perjalanan. Setiba di puncak, Anda bisa langsung menyaksikan pemandangan
+                    lanskap kota Batu dari ketinggian. Ini merupakan rute favorit bagi tim korporat karena durasinya tak
+                    terlalu panjang, namun cukup membakar kalori.</p>
+
+                <h2>5. Coban Supit Urang dan Padang Sabana</h2>
+                <p>Sebuah keajaiban kecil di sisi timur lanskap lereng pegunungan Malang. Untuk sampai ke titik utama
+                    air terjun yang terapit dinding batu bertekstur, Anda harus melintasi padang kecil yang rimbun oleh
+                    ilalang. Jalur ini membangkitkan nostalgia masa kecil dan kebebasan bermain di alam.</p>
+
+                <h2>Perkuat Tim Anda di Alam Bebas</h2>
+                <p>Semua jalur di atas telah kami survei dan uji langsung. Namun, ingatlah selalu bahwa mendaki dan
+                    menyusuri hutan butuh persiapan fisik dan perbekalan yang matang. Jika Anda adalah pelaku bisnis
+                    atau perwakilan sekolah yang mencari pengalaman <em>outdoor</em> seru, biarkan tim <strong>Malang
+                        Outbound</strong> merancangkannya untuk Anda dengan standar keselamatan tertinggi.</p>
+
+                <h2>Kesimpulan</h2>
+                <p>Mengeksplorasi alam melalui aktivitas rekreasi dan outbound memberikan jembatan pengalaman yang luar
+                    biasa. Tidak hanya menyehatkan fisik, namun juga membangun sinergi dan kolaborasi antar individu
+                    secara efektif. Persiapan yang matang serta bantuan pendampingan profesional sangat direkomendasikan
+                    agar setiap perjalanan memberikan makna dan ingatan mendalam.</p>
+
+                <h2>FAQ (Pertanyaan yang Sering Diajukan)</h2>
+                <div class="faq-item">
+                    <details>
+                        <summary>Apakah program ini aman untuk orang yang jarang olahraga?</summary>
+                        <p>Tentu saja. Kami selalu menyesuaikan intensitas program dan rute perjalanan berdasarkan
+                            kondisi fisik peserta, didukung oleh tim profesional dengan alat pelindung standar.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Bagaimana cara melakukan reservasi?</summary>
+                        <p>Anda bisa menekan tombol WhatsApp yang melayang pada layar Anda, atau mengirimkan email
+                            melalui form pada halaman kontak kami untuk menanyakan penawaran harga menarik.</p>
+                    </details>
+                </div>
+
+                <img src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Terima Kasih Gif"
+                    class="promo-gif" />
+            </div>
+
+            <div class="author-profile">
+                <img src="https://ui-avatars.com/api/?name=Tim+Editor&background=0077b8&color=fff" alt="Profil Penulis">
+                <div class="author-info">
+                    <h4>Tim Publikasi</h4>
+                    <p>Penulis spesialis outdoor activity dan team building korporat.</p>
+                </div>
+            </div>
+
+            <div class="share-buttons">
+                <a href="https://wa.me/?text=Halo,%20saya%20membaca%20artikel%20ini!" target="_blank"
+                    class="share-btn share-wa">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z" />
+                    </svg>
+                    <span>Bagikan ke WA</span>
+                </a>
+                <a href="https://facebook.com/sharer/sharer.php?u=https://malangoutbound.com" target="_blank"
+                    class="share-btn share-fb">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                    </svg>
+                    <span>Share ke FB</span>
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Cek%20artikel%20ini!&url=https://malangoutbound.com"
+                    target="_blank" class="share-btn share-tw">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+                    </svg>
+                    <span>Tweet ini</span>
+                </a>
+            </div>
+
+            <div class="related-articles-section">
+                <h3>Artikel Terkait</h3>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400"
+                            alt="Artikel Pertama">
+                        <div class="related-card-content">
+                            <h4>Manfaat Team Building di Alam</h4>
+                            <p>Ketahui bagaimana aktivitas alam dapat meningkatkan kolaborasi tim Anda.</p>
+                            <a href="article2.html" class="related-btn">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                    <div class="related-card">
+                        <img src="https://images.unsplash.com/photo-1537210249814-b9a10a161ae4?auto=format&fit=crop&q=80&w=400"
+                            alt="Artikel Kedua">
+                        <div class="related-card-content">
+                            <h4>Persiapan Sebelum Ke Malang</h4>
+                            <p>Tips persiapan fisik, logistik, mental sebelum petualangan di Malang.</p>
+                            <a href="article3.html" class="related-btn">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                    <div class="related-card">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=400"
+                            alt="Artikel Ketiga">
+                        <div class="related-card-content">
+                            <h4>Fun Games Favorit Perusahaan</h4>
+                            <p>Daftar permainan seru yang sering diminta dan berdampak positif.</p>
+                            <a href="article1.html" class="related-btn">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="material-symbols-outlined">landscape</span>
+                        <h2>Malang Outbound</h2>
+                    </div>
+                    <p>Menciptakan kenangan tak terlupakan di alam sejak 2015. Kami menghubungkan tim melalui
+                        petualangan.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Perusahaan</h4>
+                    <a href="#">Tentang Kami</a>
+                    <a href="#">Karier</a>
+                    <a href="#">Pemandu Kami</a>
+                    <a href="#">Kebijakan Privasi</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Paket</h4>
+                    <a href="#">Retret Perusahaan</a>
+                    <a href="#">Kumpul Keluarga</a>
+                    <a href="#">Kemah Pelajar</a>
+                    <a href="#">Perjalanan Khusus</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Sumber Daya</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Panduan Keselamatan</a>
+                    <a href="#">Hubungi Dukungan</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Petualangan Outbound Malang. Hak cipta dilindungi undang-undang.</p>
+                <div class="footer-links">
+                    <a href="#">Syarat</a>
+                    <a href="#">Privasi</a>
+                    <a href="#">Cookie</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WA -->
+    <div class="fab-wrap">
+        <a href="https://wa.me/6281234567890" class="fab-wa" aria-label="WhatsApp Us" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.571-.012c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const content = document.querySelector(".article-content");
+            if (content) {
+                const headings = content.querySelectorAll("h2, h3");
+                const tocList = document.getElementById("toc-list");
+
+                if (headings.length > 0 && tocList) {
+                    headings.forEach((heading, index) => {
+                        const id = "heading-" + index;
+                        heading.id = id;
+                        const li = document.createElement("li");
+                        li.style.marginLeft = heading.tagName === "H3" ? "20px" : "0";
+                        const a = document.createElement("a");
+                        a.href = "#" + id;
+                        a.textContent = heading.textContent;
+                        li.appendChild(a);
+                        tocList.appendChild(li);
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

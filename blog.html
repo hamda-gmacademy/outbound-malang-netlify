@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
-    <title>Petualangan Outbound Malang - Paket Outbound Terbaik</title>
+    <title>Blog - Petualangan Outbound Malang</title>
     <meta name="description"
         content="Penyedia jasa outbound Malang terpercaya. Nikmati berbagai paket outbound, rafting, paintball, camping, dan team building terbaik di Malang dengan fasilitas profesional dan pengalaman AEO GEO yang mendalam." />
     <meta name="keywords"
@@ -891,6 +891,72 @@
             font-weight: 500;
         }
 
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 24px;
+            transition: color 0.2s;
+        }
+
+        .btn-back:hover {
+            color: var(--primary);
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 24px;
+            border: 1px solid #d1d5db;
+            background: white;
+            color: var(--text-main);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .btn-read-more {
+            margin-top: auto;
+            display: inline-block;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-read-more:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
         /* ===== CONTACT ===== */
         #contact {
             padding: 80px 40px;
@@ -1430,7 +1496,6 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
     <header>
         <div class="header-inner">
@@ -1439,11 +1504,11 @@
                 <h2>Malang Outbound</h2>
             </a>
             <nav>
-                <a href="#home">Beranda</a>
-                <a href="#profile">Profil</a>
-                <a href="#packages">Paket</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Kontak</a>
+                <a href="index.html#home">Beranda</a>
+                <a href="index.html#profile">Profil</a>
+                <a href="index.html#packages">Paket</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="index.html#contact">Kontak</a>
             </nav>
             <div style="display:flex;align-items:center;gap:16px;">
                 <a href="https://wa.me/6281234567890?text=halo,%20saya%20tertarik%20memesan%20jasa%20outbound%20di%20Malang,%20boleh%20saya%20berkonsultasi%20terlebih%20dahulu?"
@@ -1454,240 +1519,79 @@
             </div>
         </div>
         <div class="mobile-menu" id="mobile-menu">
-            <a href="#home" onclick="closeMobileMenu()">Beranda</a>
-            <a href="#profile" onclick="closeMobileMenu()">Profil</a>
-            <a href="#packages" onclick="closeMobileMenu()">Paket</a>
-            <a href="#blog" onclick="closeMobileMenu()">Blog</a>
-            <a href="#contact" onclick="closeMobileMenu()">Kontak</a>
+            <a href="index.html#home" onclick="closeMobileMenu()">Beranda</a>
+            <a href="index.html#profile" onclick="closeMobileMenu()">Profil</a>
+            <a href="index.html#packages" onclick="closeMobileMenu()">Paket</a>
+            <a href="index.html#blog" onclick="closeMobileMenu()">Blog</a>
+            <a href="index.html#contact" onclick="closeMobileMenu()">Kontak</a>
         </div>
     </header>
 
+
     <main>
-        <!-- HERO -->
-        <section id="home">
-            <div class="hero-bg">
-                <img alt="Lush green forest landscape in Malang with sunlight filtering through trees"
-                    fetchpriority="high" decoding="sync"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyCpWxXJlT1AzprJid1dPKRG6DVIwFGuXiPADRC0ykQErLwNnHC2EPfuYUOnzjmUY9AgEFJfrExP-QHB2c0rRCociIqkWq2q_rU5ZzJHyIfncNiLbOAjBYYDmuatvWXPkY2wnTKef8jt7oIzGgxGHtf8kbJpyvS7NtG-or_Egu6kpEddI13l2fgCyF4kBl6zf99_hVzwcXog3fiV4plF2K_4HKjYcbe4q4_GuvO_FRfpy1fZO3g-PH_uI1uDZX5STlB5P7bKI92ZIs" />
-                <div class="hero-overlay"></div>
-            </div>
-            <div class="hero-content">
-                <h1>Satukan Tim Anda dalam<br />Dekapan Alam</h1>
-                <p>Rasakan petualangan outbound terbaik di Malang. Bangun ikatan, kepercayaan, dan kepemimpinan yang
-                    lebih kuat di tengah alam bebas.</p>
-                <div class="hero-buttons">
-                    <button class="btn-hero-primary"
-                        onclick="document.getElementById('profile').scrollIntoView({behavior: 'smooth'})">Mulai
-                        Perjalanan Anda</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROFILE -->
-        <section id="profile">
-            <div class="profile-inner">
-                <div class="profile-text">
-                    <div class="section-label">Siapa Kami</div>
-                    <h2>Mencetak Pemimpin di Alam Bebas sejak 2015</h2>
-                    <p>Kami berspesialisasi dalam menciptakan pengalaman bonding tim yang tak terlupakan. Program kami
-                        dirancang untuk mendorong kolaborasi, kepercayaan, dan kepemimpinan di alam terbuka Malang yang
-                        menyegarkan.</p>
-                    <p>Baik itu tim startup kecil atau divisi perusahaan besar, pemandu bersertifikat kami memastikan
-                        pengalaman yang aman, menyenangkan, dan transformatif yang disesuaikan dengan tujuan spesifik
-                        Anda.</p>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Klien Puas</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Pemandu Ahli</span>
-                        </div>
-                    </div>
-                    <button class="btn-link">Baca Cerita Kami <span
-                            class="material-symbols-outlined">arrow_forward</span></button>
-                </div>
-                <div class="profile-image-wrap">
-                    <img alt="Group of diverse people high-fiving during an outdoor team building activity"
-                        loading="lazy" decoding="async"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-kU2ggX9GAKGTh3QhbprD4ty2rrQZtHt7eD3qt6BJ3jckXUELLe0PmSp87aEXmpfCfZIAw1cM4oRMN3TH7B8EVa2UErrsHx0m0DAMtQDibBnK5ssOPy9EuGrDjkaTRkkZbBJQawZBK4pRlCZS2H1Z_GN0-mp6fT9zrV1nKYdjBfalzdPflqSbDxNLn1CzJcwhDM28gbnOJ1UhZuHFeH3xDotnXSv8PCVvIJ9zTQnA8vRZpMTpPUyhLdC84ot7x9v_eJ04pSKaD7RY" />
-                </div>
-            </div>
-        </section>
-
-        <!-- FEATURES -->
-        <section class="features-section">
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon green">
-                        <span class="material-symbols-outlined">forest</span>
-                    </div>
-                    <div>
-                        <h3>Menyatu dengan Alam</h3>
-                        <p>Dapatkan kembali koneksi dengan alam di lingkungan yang tenang, jauh dari hiruk pikuk kota.
-                        </p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon blue">
-                        <span class="material-symbols-outlined">diversity_3</span>
-                    </div>
-                    <div>
-                        <h3>Membangun Tim</h3>
-                        <p>Aktivitas terstruktur yang dirancang untuk meningkatkan moral penggiat dan kolaborasi.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon orange">
-                        <span class="material-symbols-outlined">safety_check</span>
-                    </div>
-                    <div>
-                        <h3>Pemandu Profesional</h3>
-                        <p>Ahli bersertifikat yang memastikan keselamatan dan kesenangan sepanjang perjalanan.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PACKAGES -->
-        <section id="packages">
-            <div class="packages-inner">
-                <div class="section-header">
-                    <div class="label">Pilih Petualangan Anda</div>
-                    <h3>Paket yang disesuaikan untuk setiap ukuran tim</h3>
-                    <p>Harga transparan tanpa biaya tersembunyi. Pilih rencana yang sempurna untuk kebutuhan tim Anda.
-                    </p>
-                </div>
-                <div class="cards-grid">
-                    <!-- Starter -->
-                    <div class="pkg-card">
-                        <div>
-                            <h4>Pemula</h4>
-                            <div class="pkg-price">
-                                <span class="amount">Rp250.000,00</span>
-                                <span class="period">/orang</span>
-                            </div>
-                        </div>
-                        <div class="pkg-divider"></div>
-                        <ul class="pkg-features">
-                            <li><span class="material-symbols-outlined">check_circle</span> Perjalanan Seharian (8 Jam)
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Termasuk Makanan Ringan
-                                &amp; Makan Siang
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> 3 Aktivitas Tim Dasar</li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Dokumentasi Foto</li>
-                        </ul>
-                        <button class="pkg-btn outline"
-                            onclick="window.open('https://wa.me/6281234567890?text=halo,%20saya%20tertarik%20memesan%20Pemula', '_blank')">Pesan
-                            Pemula</button>
-                    </div>
-                    <!-- Corporate -->
-                    <div class="pkg-card featured">
-                        <span class="badge">PALING POPULER</span>
-                        <div>
-                            <h4>Korporat</h4>
-                            <div class="pkg-price">
-                                <span class="amount">Rp350.000,00</span>
-                                <span class="period">/orang</span>
-                            </div>
-                        </div>
-                        <div class="pkg-divider"></div>
-                        <ul class="pkg-features">
-                            <li><span class="material-symbols-outlined">check_circle</span> Akhir Pekan Penuh (2 Hari)
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Menginap di Hotel &amp;
-                                Semua Makanan
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> 5 Aktivitas Tim Lanjutan
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Fasilitator Profesional
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Montase Video</li>
-                        </ul>
-                        <button class="pkg-btn solid"
-                            onclick="window.open('https://wa.me/6281234567890?text=halo,%20saya%20tertarik%20memesan%20Korporat', '_blank')">Pesan
-                            Korporat</button>
-                    </div>
-                    <!-- Executive -->
-                    <div class="pkg-card">
-                        <div>
-                            <h4>Eksekutif</h4>
-                            <div class="pkg-price">
-                                <span class="amount">Rp500.000,00</span>
-                                <span class="period">/orang</span>
-                            </div>
-                        </div>
-                        <div class="pkg-divider"></div>
-                        <ul class="pkg-features">
-                            <li><span class="material-symbols-outlined">check_circle</span> Menginap di Resor Mewah (3
-                                Hari)
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Katering Gourmet</li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Workshop Kepemimpinan Khusus
-                            </li>
-                            <li><span class="material-symbols-outlined">check_circle</span> Transportasi Pribadi</li>
-                        </ul>
-                        <button class="pkg-btn outline"
-                            onclick="window.open('https://wa.me/6281234567890?text=halo,%20saya%20tertarik%20memesan%20Eksekutif', '_blank')">Pesan
-                            Eksekutif</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- BLOG -->
         <section id="blog">
             <div class="blog-inner">
                 <div class="blog-header">
                     <div class="blog-header-left">
+                        <a href="index.html" class="btn-back"><span class="material-symbols-outlined">arrow_back</span>
+                            Kembali ke Beranda</a>
                         <div class="label">Dari Blog</div>
                         <h3>Cerita &amp; Tips Terbaru</h3>
                     </div>
-                    <a href="blog.html">Lihat semua postingan <span class="material-symbols-outlined"
-                            style="font-size:1.1rem;vertical-align:middle;">arrow_forward</span></a>
+                </div>
+                <div class="blog-filters">
+                    <button class="filter-btn active" onclick="filterBlog('all')">Semua Artikel</button>
+                    <button class="filter-btn" onclick="filterBlog('tips')">Tips</button>
+                    <button class="filter-btn" onclick="filterBlog('team-building')">Team Building</button>
+                    <button class="filter-btn" onclick="filterBlog('panduan')">Panduan</button>
                 </div>
                 <div class="blog-grid">
-                    <div class="blog-card" onclick="window.location.href='article1.html'">
+                    <div class="blog-card" data-category="tips" onclick="window.location.href='article1.html'">
                         <div class="blog-img-wrap">
                             <img alt="Hikers walking up a misty mountain trail in Malang" loading="lazy"
                                 decoding="async"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgrEkU2hhBeOz6pTQy7B4ocVb2yCy_l83-5qvsb3Zl8PssAbwAkFtMj6Z8yjRMtqs6cHJILYmF1v1HLHE6cguqy799JOr61nXycTWvQKT2us_QO4ZqNvW2fR1hra0ZRjDT7voDw6-896Xnq52w17G7Yb5MyHul_T2NBSJIZostZdWs1fNRuY1dVV6miOj6ocEwmhvafu4sb0Lanc1zwrJsw-pqaywDGUO6x7KgX3jfRIdxo69EYSkRc_R42bEWzp6KJIxkQUrcbJtB" />
                         </div>
                         <div class="blog-meta">
-                            <span class="blog-tag">Destinasi</span>
+                            <span class="blog-tag">Tips</span>
                             <h4>5 Jalur Pendakian Tersembunyi Terbaik di Malang</h4>
                             <p>Temukan keindahan Malang yang belum tersentuh dengan lima jalur rahasia ini, sempurna
                                 untuk pemula dan profesional.</p>
                             <span class="blog-date">12 Okt 2023 • 5 menit baca</span>
+                            <a href="article1.html" class="btn-read-more" onclick="event.stopPropagation();">Baca
+                                Selengkapnya</a>
                         </div>
                     </div>
-                    <div class="blog-card" onclick="window.location.href='article2.html'">
+                    <div class="blog-card" data-category="team-building" onclick="window.location.href='article2.html'">
                         <div class="blog-img-wrap">
                             <img alt="Group of friends laughing around a campfire at night" loading="lazy"
                                 decoding="async"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBBxtM1kZJ-t3tMVHWJP4tlcewM6Bb6YwSIkCkJLecCbsLJzVTVgVVXWVxT9nW1joa8uX67Mr5gIKkiUKFu7lMv4JHhkmzng2bWB4wXnwExtWHYH7WC3QFCbS6jd6IWR_-cEAPxW-dI1cM-7ZuoSHLcFbft_ZjRpmVv1mp36ajRzTe9USy2rOrloChbG7LGpL-o29xf1ZaBQW-wM9p94me6hvUjtyfUlk4d67gF_84G9DfoU-CrqrjYLV7DNmQzPS36IjnsvIwACTG" />
                         </div>
                         <div class="blog-meta">
-                            <span class="blog-tag">Membangun Tim</span>
+                            <span class="blog-tag">Team Building</span>
                             <h4>Mengapa Bonding di Luar Ruangan Lebih Baik untuk Moral</h4>
                             <p>Sains menunjukkan bahwa menghabiskan waktu di alam secara signifikan mengurangi stres dan
                                 meningkatkan hubungan antarpribadi.</p>
                             <span class="blog-date">28 Sep 2023 • 4 menit baca</span>
+                            <a href="article2.html" class="btn-read-more" onclick="event.stopPropagation();">Baca
+                                Selengkapnya</a>
                         </div>
                     </div>
-                    <div class="blog-card" onclick="window.location.href='article3.html'">
+                    <div class="blog-card" data-category="panduan" onclick="window.location.href='article3.html'">
                         <div class="blog-img-wrap">
                             <img alt="Climber checking safety gear before an activity" loading="lazy" decoding="async"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwP1aS7jWmiifu5mcyi7-3MVCuTB2KjDEg7or2Qpdbz6qkt3bY4CcOfUWFi2CBhmOCQz8hQ_6AMFKAHU-leONXUbko1V7lPpc1qGes3GjK7OosiOlw8RZQJwt5LAjkODirFVkbePWK-hmWyazfu0YmEisALfnOXC4M9WFtsFRep9FmTGv0P-5DSCXdntuzRx5wLh9wmH6vS1cfWMJgEXOmGsd2QTkcx3fEQJ9VmuQTC4Ksz4JADWHj-RfxlMfBQt4luPMQizPrFq5b" />
                         </div>
                         <div class="blog-meta">
-                            <span class="blog-tag">Keamanan</span>
+                            <span class="blog-tag">Panduan</span>
                             <h4>Utamakan Keselamatan: Panduan Kami untuk Petualangan yang Aman</h4>
                             <p>Bagaimana kami memastikan setiap peserta tetap aman sembari menikmati waktu terbaik
                                 mereka di alam liar.</p>
                             <span class="blog-date">15 Sep 2023 • 6 menit baca</span>
+                            <a href="article3.html" class="btn-read-more" onclick="event.stopPropagation();">Baca
+                                Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -1781,7 +1685,6 @@
             </div>
         </section>
     </main>
-
     <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
@@ -1865,6 +1768,22 @@
         function closeMobileMenu() {
             mobileMenu.classList.remove('open');
             menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+        }
+
+        function filterBlog(category) {
+            const cards = document.querySelectorAll('.blog-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
     </script>
 </body>
