@@ -53,11 +53,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap"
-        rel="stylesheet" />
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDyCpWxXJlT1AzprJid1dPKRG6DVIwFGuXiPADRC0ykQErLwNnHC2EPfuYUOnzjmUY9AgEFJfrExP-QHB2c0rRCociIqkWq2q_rU5ZzJHyIfncNiLbOAjBYYDmuatvWXPkY2wnTKef8jt7oIzGgxGHtf8kbJpyvS7NtG-or_Egu6kpEddI13l2fgCyF4kBl6zf99_hVzwcXog3fiV4plF2K_4HKjYcbe4q4_GuvO_FRfpy1fZO3g-PH_uI1uDZX5STlB5P7bKI92ZIs" fetchpriority="high">
+    <!-- Async Web Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    </noscript>
 
     <!-- JSON-LD Structured Data for AEO/GEO Focus -->
     <script type="application/ld+json">
@@ -1467,7 +1475,7 @@
         <section id="home">
             <div class="hero-bg">
                 <img alt="Lush green forest landscape in Malang with sunlight filtering through trees"
-                    fetchpriority="high" decoding="sync"
+                    fetchpriority="high" decoding="sync" width="1920" height="1080"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyCpWxXJlT1AzprJid1dPKRG6DVIwFGuXiPADRC0ykQErLwNnHC2EPfuYUOnzjmUY9AgEFJfrExP-QHB2c0rRCociIqkWq2q_rU5ZzJHyIfncNiLbOAjBYYDmuatvWXPkY2wnTKef8jt7oIzGgxGHtf8kbJpyvS7NtG-or_Egu6kpEddI13l2fgCyF4kBl6zf99_hVzwcXog3fiV4plF2K_4HKjYcbe4q4_GuvO_FRfpy1fZO3g-PH_uI1uDZX5STlB5P7bKI92ZIs" />
                 <div class="hero-overlay"></div>
             </div>
@@ -1510,7 +1518,7 @@
                 </div>
                 <div class="profile-image-wrap">
                     <img alt="Group of diverse people high-fiving during an outdoor team building activity"
-                        loading="lazy" decoding="async"
+                        loading="lazy" decoding="async" width="800" height="600"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-kU2ggX9GAKGTh3QhbprD4ty2rrQZtHt7eD3qt6BJ3jckXUELLe0PmSp87aEXmpfCfZIAw1cM4oRMN3TH7B8EVa2UErrsHx0m0DAMtQDibBnK5ssOPy9EuGrDjkaTRkkZbBJQawZBK4pRlCZS2H1Z_GN0-mp6fT9zrV1nKYdjBfalzdPflqSbDxNLn1CzJcwhDM28gbnOJ1UhZuHFeH3xDotnXSv8PCVvIJ9zTQnA8vRZpMTpPUyhLdC84ot7x9v_eJ04pSKaD7RY" />
                 </div>
             </div>
@@ -1652,7 +1660,7 @@
                     <div class="blog-card" onclick="window.location.href='article1.html'">
                         <div class="blog-img-wrap">
                             <img alt="Hikers walking up a misty mountain trail in Malang" loading="lazy"
-                                decoding="async"
+                                decoding="async" width="800" height="450"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgrEkU2hhBeOz6pTQy7B4ocVb2yCy_l83-5qvsb3Zl8PssAbwAkFtMj6Z8yjRMtqs6cHJILYmF1v1HLHE6cguqy799JOr61nXycTWvQKT2us_QO4ZqNvW2fR1hra0ZRjDT7voDw6-896Xnq52w17G7Yb5MyHul_T2NBSJIZostZdWs1fNRuY1dVV6miOj6ocEwmhvafu4sb0Lanc1zwrJsw-pqaywDGUO6x7KgX3jfRIdxo69EYSkRc_R42bEWzp6KJIxkQUrcbJtB" />
                         </div>
                         <div class="blog-meta">
@@ -1666,7 +1674,7 @@
                     <div class="blog-card" onclick="window.location.href='article2.html'">
                         <div class="blog-img-wrap">
                             <img alt="Group of friends laughing around a campfire at night" loading="lazy"
-                                decoding="async"
+                                decoding="async" width="800" height="450"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBBxtM1kZJ-t3tMVHWJP4tlcewM6Bb6YwSIkCkJLecCbsLJzVTVgVVXWVxT9nW1joa8uX67Mr5gIKkiUKFu7lMv4JHhkmzng2bWB4wXnwExtWHYH7WC3QFCbS6jd6IWR_-cEAPxW-dI1cM-7ZuoSHLcFbft_ZjRpmVv1mp36ajRzTe9USy2rOrloChbG7LGpL-o29xf1ZaBQW-wM9p94me6hvUjtyfUlk4d67gF_84G9DfoU-CrqrjYLV7DNmQzPS36IjnsvIwACTG" />
                         </div>
                         <div class="blog-meta">
@@ -1679,7 +1687,7 @@
                     </div>
                     <div class="blog-card" onclick="window.location.href='article3.html'">
                         <div class="blog-img-wrap">
-                            <img alt="Climber checking safety gear before an activity" loading="lazy" decoding="async"
+                            <img alt="Climber checking safety gear before an activity" loading="lazy" decoding="async" width="800" height="450"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwP1aS7jWmiifu5mcyi7-3MVCuTB2KjDEg7or2Qpdbz6qkt3bY4CcOfUWFi2CBhmOCQz8hQ_6AMFKAHU-leONXUbko1V7lPpc1qGes3GjK7OosiOlw8RZQJwt5LAjkODirFVkbePWK-hmWyazfu0YmEisALfnOXC4M9WFtsFRep9FmTGv0P-5DSCXdntuzRx5wLh9wmH6vS1cfWMJgEXOmGsd2QTkcx3fEQJ9VmuQTC4Ksz4JADWHj-RfxlMfBQt4luPMQizPrFq5b" />
                         </div>
                         <div class="blog-meta">
